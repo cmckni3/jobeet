@@ -11,13 +11,13 @@ class jobActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->JobeetJobs = JobeetJobQuery::create()->find();
+    $this->jobeet_jobs = JobeetJobQuery::create()->find();
   }
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->JobeetJob = JobeetJobPeer::retrieveByPk($request->getParameter('id'));
-    $this->forward404Unless($this->JobeetJob);
+    $this->job = JobeetJobPeer::retrieveByPk($request->getParameter('id'));
+    $this->forward404Unless($this->job);
   }
 
   public function executeNew(sfWebRequest $request)
