@@ -16,7 +16,8 @@ class jobActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->job = JobeetJobPeer::retrieveByPk($request->getParameter('id'));
+/*     $this->job = JobeetJobPeer::retrieveByPk($request->getParameter('id')); */
+    $this->job = $this->getRoute()->getObject();
     $this->forward404Unless($this->job);
   }
 
