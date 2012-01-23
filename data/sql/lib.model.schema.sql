@@ -13,8 +13,10 @@ CREATE TABLE `jobeet_category`
 (
 	`id` INTEGER NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
+	`slug` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`id`),
-	UNIQUE INDEX `jobeet_category_U_1` (`name`)
+	UNIQUE INDEX `jobeet_category_U_1` (`name`),
+	UNIQUE INDEX `jobeet_category_U_2` (`slug`)
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
