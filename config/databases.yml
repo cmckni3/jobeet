@@ -16,8 +16,10 @@ dev:
 
 test:
   propel:
+    class:        sfPropelDatabase
     param:
       classname:  DebugPDO
+      dsn:        mysql:dbname=jobeet_test;host=localhost
 
 all:
   propel:
