@@ -1,3 +1,3 @@
-<h1>Edit JobeetJob</h1>
+<h1>Edit Job</h1>
 
 <?php include_partial('form', array('form' => $form)) ?>
