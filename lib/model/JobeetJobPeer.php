@@ -53,5 +53,14 @@ class JobeetJobPeer extends BaseJobeetJobPeer {
   {
     return self::doSelectOne(self::addActiveJobsCriteria($criteria));
   }
+  
+  static public function cleanup($days)
+  {
+    $criteria = new Criteria();
+    $criteria->add(self::IS_ACTIVATED, false);
+    $criteria->add(self::CREATED_AT, time() - 86400 * $days, Criteria::LESS_THAN);
+   
+    return self::doDelete($criteria);
+  }
       
 } // JobeetJobPeer

@@ -23,5 +23,8 @@
         [Bookmark this <?php echo link_to('URL', 'job_show', $job, true) ?> to manage this job in the future.]
       </li>
     <?php endif ?>
+    <?php if ($job->expiresSoon()): ?>
+     - <?php echo link_to('Extend', 'job_extend', $job, array('method' => 'put')) ?> for another <?php echo sfConfig::get('app_active_days') ?> days
+    <?php endif ?>
   </ul>
 </div>
