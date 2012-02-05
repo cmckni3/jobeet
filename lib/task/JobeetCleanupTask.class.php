@@ -24,7 +24,7 @@ EOF;
   protected function execute($arguments = array(), $options = array())
   {
     $databaseManager = new sfDatabaseManager($this->configuration);
-    error_log("here");
+
     $nb = JobeetJobPeer::cleanup($options['days']);
     $this->logSection('propel', sprintf('Removed %d stale jobs', $nb));
   }

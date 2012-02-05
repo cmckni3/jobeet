@@ -85,6 +85,9 @@ JobeetJob:
   job_<?php echo $i ?>:
     category_id:  programming
     company:      Company <?php echo $i."\n" ?>
+    type:         full-time
+    logo:         extreme-sensio.gif
+    url:          http://www.extreme-sensio.com/
     position:     Web Developer
     location:     Paris, France
     description:  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
