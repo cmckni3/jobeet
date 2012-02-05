@@ -33,6 +33,7 @@ class jobActions extends sfActions
 /*     $this->job = JobeetJobPeer::retrieveByPk($request->getParameter('id')); */
     $this->job = $this->getRoute()->getObject();
     $this->forward404Unless($this->job);
+    $this->getUser()->addJobToHistory($this->job);
   }
 
   public function executeNew(sfWebRequest $request)
