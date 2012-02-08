@@ -23,10 +23,12 @@ job_show_user:
     sf_method: [GET]
     
 category:
-  url:      /category/:slug
-  class:    sfPropelRoute
-  param:    { module: category, action: show }
-  options:  { model: JobeetCategory, type: object }
+  url:     /category/:slug.:sf_format
+  class:   sfPropelRoute
+  param:   { module: category, action: show, sf_format: html }
+  options: { model: JobeetCategory, type: object }
+  requirements:
+    sf_format: (?:html|atom)
 
 # default rules
 homepage:
