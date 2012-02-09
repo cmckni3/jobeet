@@ -29,6 +29,21 @@ category:
   options: { model: JobeetCategory, type: object }
   requirements:
     sf_format: (?:html|atom)
+    
+api_jobs:
+  url:     /api/:token/jobs.:sf_format
+  class:   sfPropelRoute
+  param:   { module: api, action: list }
+  options: { model: JobeetJob, type: list, method: getForToken }
+  requirements:
+    sf_format: (?:xml|json|yaml)
+
+affiliate:
+  class:   sfPropelRouteCollection
+  options:
+    model: JobeetAffiliate
+    actions: [new, create]
+    object_actions: { wait: get }
 
 # default rules
 homepage:

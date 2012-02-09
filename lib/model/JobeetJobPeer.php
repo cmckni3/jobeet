@@ -71,4 +71,15 @@ class JobeetJobPeer extends BaseJobeetJobPeer {
     return JobeetJobPeer::doSelectOne($criteria);
   }
   
+  static public function getForToken(array $parameters)
+  {
+    $affiliate = JobeetAffiliatePeer::getByToken($parameters['token']);
+    if (!$affiliate || !$affiliate->getIsActive())
+    {
+      throw new sfError404Exception(sprintf('Affiliate with token "%s" does not exist or is not activated.', $parameters['token']));
+    }
+ 
+    return $affiliate->getActiveJobs();
+  }
+  
 } // JobeetJobPeer
