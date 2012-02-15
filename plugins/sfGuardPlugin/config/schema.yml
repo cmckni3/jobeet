@@ -25,6 +25,10 @@ propel:
     algorithm:      { type: varchar, size: 128, required: true, default: sha1 }
     salt:           { type: varchar, size: 128, required: true }
     password:       { type: varchar, size: 128, required: true }
+    first_name:  varchar(20)
+    last_name:   varchar(20)
+    email_address: { type: varchar(255), required: false }
+    birthday:    date
     created_at:     ~
     last_login:     { type: timestamp }
     is_active:      { type: boolean, required: true, default: 1 }

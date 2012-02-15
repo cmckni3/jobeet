@@ -35,3 +35,12 @@ propel:
   jobeet_category_affiliate:
     category_id:  { type: integer, foreignTable: jobeet_category, foreignReference: id, required: true, primaryKey: true, onDelete: cascade }
     affiliate_id: { type: integer, foreignTable: jobeet_affiliate, foreignReference: id, required: true, primaryKey: true, onDelete: cascade }
+    
+  sf_guard_user_profile:
+        _attributes: { phpName: sfGuardUserProfile }
+        id:
+        user_id:     { type: integer, foreignTable: sf_guard_user, foreignReference: id, required: true, onDelete: cascade }
+        first_name:  varchar(20)
+        last_name:   varchar(20)
+        email_address: { type: varchar(255), required: false }
+        birthday:    date
