@@ -82,4 +82,49 @@ class JobeetJobPeer extends BaseJobeetJobPeer {
     return $affiliate->getActiveJobs();
   }
   
+  static public function getLuceneIndex()
+  {
+    ProjectConfiguration::registerZend();
+   
+    if (file_exists($index = self::getLuceneIndexFile()))
+    {
+      return Zend_Search_Lucene::open($index);
+    }
+   
+    return Zend_Search_Lucene::create($index);
+  }
+   
+  static public function getLuceneIndexFile()
+  {
+    return sfConfig::get('sf_data_dir').'/job.'.sfConfig::get('sf_environment').'.index';
+  }
+  
+  public static function doDeleteAll(PropelPDO $con = null)
+  {
+    if (file_exists($index = self::getLuceneIndexFile()))
+    {
+      sfToolkit::clearDirectory($index);
+      rmdir($index);
+    }
+   
+    return parent::doDeleteAll($con);
+  }
+  
+  static public function getForLuceneQuery($query)
+  {
+    $hits = self::getLuceneIndex()->find($query);
+   
+    $pks = array();
+    foreach ($hits as $hit)
+    {
+      $pks[] = $hit->pk;
+    }
+    
+    $criteria = new Criteria();
+    $criteria->add(self::ID, $pks, Criteria::IN);
+    $criteria->setLimit(20);
+   
+    return self::doSelect(self::addActiveJobsCriteria($criteria));
+  }
+  
 } // JobeetJobPeer

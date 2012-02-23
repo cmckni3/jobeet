@@ -4,8 +4,12 @@ config/databases.yml
 cache/*
 log/*
 data/sql/*
+data/*
+!data/fixtures/*
 lib/filter/base/*
 lib/form/base/*
 lib/model/map/*
 lib/model/om/*
 web/uploads/*
+plugins/sfGuardPlugin/lib/model/om/*
+plugins/sfGuardPlugin/lib/model/map/*

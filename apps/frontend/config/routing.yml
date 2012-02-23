@@ -22,6 +22,10 @@ job_show_user:
     id: \d+
     sf_method: [GET]
     
+job_search:
+  url:   /search
+  param: { module: job, action: search }
+    
 category:
   url:     /category/:slug.:sf_format
   class:   sfPropelRoute

@@ -7,6 +7,22 @@ class ProjectConfiguration extends sfProjectConfiguration
 {
   public function setup()
   {
+    date_default_timezone_set('America/Chicago');
     $this->enablePlugins(array('sfPropelORMPlugin', 'sfGuardPlugin'));
+  }
+  
+  static protected $zendLoaded = false;
+ 
+  static public function registerZend()
+  {
+    if (self::$zendLoaded)
+    {
+      return;
+    }
+ 
+    set_include_path(sfConfig::get('sf_lib_dir').'/vendor'.PATH_SEPARATOR.get_include_path());
+    require_once sfConfig::get('sf_lib_dir').'/vendor/Zend/Loader/Autoloader.php';
+    Zend_Loader_Autoloader::getInstance();
+    self::$zendLoaded = true;
   }
 }

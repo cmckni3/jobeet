@@ -1,3 +1,4 @@
+<?php error_log(print_r($jobs, true)); ?>
 <table class="jobs">
   <?php foreach ($jobs as $i => $job): ?>
     <tr class="<?php echo fmod($i, 2) ? 'even' : 'odd' ?>">
