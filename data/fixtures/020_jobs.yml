@@ -51,8 +51,8 @@ JobeetJob:
   google_job:
     category_id:  administrator
     type:         full-time
-    company:      Extreme Sensio
-    logo:         extreme-sensio.gif
+    company:      Google
+    logo:         google.gif
     url:          http://www.extreme-sensio.com/
     position:     Director
     location:     Mountain View, CA
