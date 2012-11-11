@@ -1,0 +1,34 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+dev:
+  propel:
+    param:
+      classname:  DebugPDO
+      debug:
+        realmemoryusage: true
+        details:
+          time:       { enabled: true }
+          slow:       { enabled: true, threshold: 0.1 }
+          mem:        { enabled: true }
+          mempeak:    { enabled: true }
+          memdelta:   { enabled: true }
+
+test:
+  propel:
+    class:        sfPropelDatabase
+    param:
+      classname:  DebugPDO
+      dsn:        mysql:dbname=jobeet_test;host=localhost
+
+all:
+  propel:
+    class:        sfPropelDatabase
+    param:
+      classname:  PropelPDO
+      dsn:        mysql:dbname=jobeet;host=localhost
+      username:   root
+      password:   root
+      encoding:   utf8
+      persistent: true
+      pooling:    true
