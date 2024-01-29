@@ -11,6 +11,6 @@ previous docs (no longer working): http://www.symfony-project.org/jobeet/1_4/Pro
 Note: This project uses peer methods deprecated in Propel 1.5 and 1.6. Propel 1.5 introduced query methods.
 Below are some good references on peer methods versus query methods and how to refactor peer methods
 
-  http://propel.posterous.com/propel-query-by-example
+  [http://propel.posterous.com/propel-query-by-example](https://web.archive.org/web/20111229213448/http://propel.posterous.com/propel-query-by-example)
   
-  http://propel.posterous.com/refactoring-from-peer-classes-to-query-classe
+  [http://propel.posterous.com/refactoring-from-peer-classes-to-query-classe](https://web.archive.org/web/20111215063419/http://propel.posterous.com/refactoring-from-peer-classes-to-query-classe)
