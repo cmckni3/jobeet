@@ -1,6 +1,6 @@
-[![project unmaintained](https://img.shields.io/badge/project-unmaintained-red.svg)](https://img.shields.io/badge/project-unmaintained-red.svg)
-
 # Jobeet tutorial from Practical symfony
+
+[![project unmaintained](https://img.shields.io/badge/project-unmaintained-red.svg)](https://img.shields.io/badge/project-unmaintained-red.svg)
 
 Walkthrough to learn symfony 1.x and propel orm.
 
